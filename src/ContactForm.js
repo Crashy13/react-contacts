@@ -19,6 +19,8 @@ class ContactForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.props.addContact(this.state);
+    this.setState({firstName: '', lastName: '', address: '', phoneNumber: ''})
   }
 
 
@@ -32,7 +34,7 @@ class ContactForm extends Component {
         <input value={this.state.lastName} onChange={this.handleInput} type="text" name="lastName" placeholder="Last Name"/>
         <input value={this.state.address} onChange={this.handleInput} type="text" name="address" placeholder="Address"/>
         <input value={this.state.phoneNumber} onChange={this.handleInput} type="text" name="phoneNumber" placeholder="Phone Number"/>
-        <button type="button">Submit</button>
+        <button>Submit</button>
       </form>
     )
   }
